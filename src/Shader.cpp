@@ -109,14 +109,14 @@ void Shader::load(const char* vertexPath, const char* fragmentPath, bool init)
     glGetProgramiv(ID, GL_LINK_STATUS, &success);
     if(!success){
         glGetProgramInfoLog(ID, 512, NULL, infoLog);
-        cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED" << infoLog << endl;
+        cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED: " << infoLog << endl;
     }
     else{
         cout << "SUCCESS::SHADER::PROGRAM::LINKING" << endl;
-
-        _vertex = vertex;
-        _fragment = fragment;
     }
+
+    _vertex = vertex;
+    _fragment = fragment;
     // delete the shader as they-re linked into our program now and no longer necessery
     glDeleteShader(vertex);
     glDeleteShader(fragment);

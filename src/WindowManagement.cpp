@@ -322,13 +322,17 @@ void WindowManagement::display()
 
     this->shader.use();
 
+    glm::vec3 light_enable(enable_lit0, enable_lit1, enable_lit2);
+
+    this->shader.set_uniform("light_enable", light_enable);
+
     render_scene(FIRST);
     // render_scene(SECOND);
 
-	glUseProgram(0);
-
     render_scene(THIRD);
     render_scene(GOD);
+
+	glUseProgram(0);
 
     render_scene(INFO);
 }
