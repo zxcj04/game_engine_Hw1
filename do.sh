@@ -1,4 +1,3 @@
 #!/usr/bin/zsh
 
-# g++ --std=c++17 -I"/home/fanrende/Documents/code/class2021/game_engine/freetype-2.10.4/include" -I"/home/fanrende/Documents/code/class2021/game_engine/glText-master" -I"/home/fanrende/Documents/code/class2021/game_engine/glad/include" *.cpp "/home/fanrende/Documents/code/class2021/game_engine/glad/src/glad.c" -L/usr/local/lib -lfreetype -lGL -lGLU -lglfw3 -pthread -lXrandr -lXxf86vm -lXi -lXinerama -lX11 -ldl -lXcursor && ./a.out
-g++ --std=c++17 -I"/usr/include/freetype2" -I"/home/fanrende/Documents/code/class2021/game_engine/glText-master" -I"/home/fanrende/Documents/code/class2021/game_engine/glad/include" *.cpp "/home/fanrende/Documents/code/class2021/game_engine/glad/src/glad.c" -L/usr/local/lib -lfreetype -lGL -lGLU -lglfw3 -pthread -lXrandr -lXxf86vm -lXi -lXinerama -lX11 -ldl -lXcursor && ./a.out
+g++ --std=c++17 -I"/home/fanrende/Documents/code/class2021/game_engine/HW1_ref/include" src/*.cpp "/home/fanrende/Documents/code/class2021/game_engine/glad/src/glad.c" -lGL -lGLU -lglfw3 -pthread -lXrandr -lXxf86vm -lXi -lXinerama -lX11 -ldl -lXcursor && ./a.out
