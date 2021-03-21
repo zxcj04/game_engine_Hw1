@@ -115,6 +115,10 @@ bool WindowManagement::init(string window_name)
 
     system_init();
 
+    this->shader = Shader("./src/shaders/test.vert", "./src/shaders/test.frag");
+
+    cout << this->shader.ID << endl;
+
     return true;
 }
 
@@ -160,6 +164,8 @@ bool WindowManagement::system_init()
     glEnable(GL_BLEND);
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+    glEnable(GL_PROGRAM_POINT_SIZE);
 
     glClearColor(0.15, 0.15, 0.5, 1.0);
 
@@ -314,8 +320,13 @@ void WindowManagement::display()
 
     glViewport(0, 0, this->width, this->height);
 
+    this->shader.use();
+
     render_scene(FIRST);
     // render_scene(SECOND);
+
+	glUseProgram(0);
+
     render_scene(THIRD);
     render_scene(GOD);
 

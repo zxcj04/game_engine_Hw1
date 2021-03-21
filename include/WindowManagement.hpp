@@ -16,11 +16,14 @@
 #define GLT_IMPLEMENTATION
 #define GLT_MANUAL_VIEWPORT
 #include "glText/gltext.h" /* https://github.com/vallentin/glText */
+#include "glm/glm.hpp"
+#include "glm/gtc/type_ptr.hpp"
 
 #include "ROV.hpp"
 #include "TURTLE.hpp"
 #include "ROCK.hpp"
 #include "STRAW.hpp"
+#include "Shader.hpp"
 
 #include "EntityHandler.hpp"
 
@@ -125,6 +128,8 @@ class WindowManagement
 
         float black[4];
         float white[4];
+
+        Shader shader;
 
         // FT_Library ft;
         // FT_Face face;

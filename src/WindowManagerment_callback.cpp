@@ -91,6 +91,12 @@ void WindowManagement::keyboard_down(int key)
 
             break;
 
+        case GLFW_KEY_R:
+
+            this->shader.load("./src/shaders/test.vert", "./src/shaders/test.frag");
+
+            break;
+
         // case GLFW_KEY_LEFT_SHIFT:
         //     this->pressing.insert(112);
 

@@ -15,11 +15,18 @@
 #include <iostream>
 using namespace std;
 
-Shader::Shader(){
+Shader::Shader()
+{
 
 }
 
-Shader::Shader(const char* vertexPath, const char* fragmentPath){
+Shader::Shader(const char* vertexPath, const char* fragmentPath)
+{
+    this->load(vertexPath, fragmentPath, true);
+}
+
+void Shader::load(const char* vertexPath, const char* fragmentPath, bool init)
+{
     // 1. read file
     string vertexCode;
     string fragmentCode;
@@ -84,7 +91,16 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath){
     }
 
     // shader program
-    this->ID = glCreateProgram();
+    if(init)
+    {
+        this->ID = glCreateProgram();
+    }
+    else
+    {
+        glDetachShader(ID, _vertex);
+        glDetachShader(ID, _fragment);
+    }
+
     glAttachShader(ID, vertex);
     glAttachShader(ID, fragment);
     glLinkProgram(ID);
@@ -97,13 +113,17 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath){
     }
     else{
         cout << "SUCCESS::SHADER::PROGRAM::LINKING" << endl;
+
+        _vertex = vertex;
+        _fragment = fragment;
     }
     // delete the shader as they-re linked into our program now and no longer necessery
     glDeleteShader(vertex);
     glDeleteShader(fragment);
 }
 
-void Shader::use(){
+void Shader::use()
+{
     glUseProgram(this->ID);
 }
 

@@ -11,21 +11,29 @@
 
 using namespace std;
 
-class Shader{
-public:
-    // the program ID
-    GLuint ID;
-    Shader();
-    // ctor reads and builds the shader
-    Shader(const char*, const char*);
+class Shader
+{
+    public:
+        // the program ID
+        GLuint ID;
 
-    // activate the shader
-    void use();
-    // utility uniform functions
-    void set_uniform(const string &name, bool value) const;
-    void set_uniform(const string &name, int value) const;
-    void set_uniform(const string &name, float value) const;
-    void set_uniform(const string &name, glm::vec3 value) const;
-    void set_uniform(const string &name, glm::vec4 value) const;
-    void set_uniform(const string &name, glm::mat4 value) const;
+        Shader();
+        // ctor reads and builds the shader
+        Shader(const char*, const char*);
+
+        void load(const char* vertexPath, const char* fragmentPath, bool init = false);
+
+        // activate the shader
+        void use();
+        // utility uniform functions
+        void set_uniform(const string &name, bool value) const;
+        void set_uniform(const string &name, int value) const;
+        void set_uniform(const string &name, float value) const;
+        void set_uniform(const string &name, glm::vec3 value) const;
+        void set_uniform(const string &name, glm::vec4 value) const;
+        void set_uniform(const string &name, glm::mat4 value) const;
+
+    private:
+
+        GLuint _vertex, _fragment;
 };
