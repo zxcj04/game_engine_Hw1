@@ -210,14 +210,14 @@ void WindowManagement::make_scene(int scene)
 
         case INFO:
             glDisable(GL_LIGHTING);
-            glDisable(GL_CULL_FACE);
+            // glDisable(GL_CULL_FACE);
             glDisable(GL_DEPTH_TEST);
 
             draw_info_background(info_width, info_height);
             show_info();
 
             glEnable(GL_LIGHTING);
-            glEnable(GL_CULL_FACE);
+            // glEnable(GL_CULL_FACE);
             glEnable(GL_DEPTH_TEST);
 
             break;
