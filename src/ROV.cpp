@@ -18,7 +18,7 @@ ROV::ROV()
     acc = {false, false, false};
 
     // auto calc angle for facing
-    angle = asin(facing[0]) * 180 / M_PI;
+    angle = asin(facing[0]) * 180 / 3.14159;
 
     // fix arcsin duplicate value of two angle
     if(facing[2] < 0)
@@ -936,9 +936,9 @@ void ROV::move(TURTLE *turtle, vector<ROCK*> rocks, set<int> pressing, float lit
     //             if(blade_angle[3] > 360)
     //                 blade_angle[3] -= 360;
 
-    //             facing[0] = sin(angle * M_PI / 180);
+    //             facing[0] = sin(angle * 3.14159 / 180);
     //             facing[1] = facing[1];
-    //             facing[2] = cos(angle * M_PI / 180);
+    //             facing[2] = cos(angle * 3.14159 / 180);
 
     //             break;
 
@@ -953,9 +953,9 @@ void ROV::move(TURTLE *turtle, vector<ROCK*> rocks, set<int> pressing, float lit
     //             if(blade_angle[4] < 0)
     //                 blade_angle[4] += 360;
 
-    //             facing[0] = sin(angle * M_PI / 180);
+    //             facing[0] = sin(angle * 3.14159 / 180);
     //             facing[1] = facing[1];
-    //             facing[2] = cos(angle * M_PI / 180);
+    //             facing[2] = cos(angle * 3.14159 / 180);
 
     //             break;
 
@@ -1158,17 +1158,17 @@ void ROV::move_turtle(TURTLE *turtle)
     //     return;
 
     vector<double> new_vector = {
-            cos((angle - catching_angle) * M_PI / 180) * catching_vector[0] + sin((angle - catching_angle) * M_PI / 180) * catching_vector[2],
+            cos((angle - catching_angle) * 3.14159 / 180) * catching_vector[0] + sin((angle - catching_angle) * 3.14159 / 180) * catching_vector[2],
             catching_vector[1],
-        -sin((angle - catching_angle) * M_PI / 180) * catching_vector[0] + cos((angle - catching_angle) * M_PI / 180) * catching_vector[2]
+        -sin((angle - catching_angle) * 3.14159 / 180) * catching_vector[0] + cos((angle - catching_angle) * 3.14159 / 180) * catching_vector[2]
     };
 
     catching_vector = new_vector;
 
     new_vector = {
-            cos((angle - catching_angle) * M_PI / 180) * turtle->facing[0] + sin((angle - catching_angle) * M_PI / 180) * turtle->facing[2],
+            cos((angle - catching_angle) * 3.14159 / 180) * turtle->facing[0] + sin((angle - catching_angle) * 3.14159 / 180) * turtle->facing[2],
             turtle->facing[1],
-        -sin((angle - catching_angle) * M_PI / 180) * turtle->facing[0] + cos((angle - catching_angle) * M_PI / 180) * turtle->facing[2]
+        -sin((angle - catching_angle) * 3.14159 / 180) * turtle->facing[0] + cos((angle - catching_angle) * 3.14159 / 180) * turtle->facing[2]
     };
 
     turtle->facing = new_vector;

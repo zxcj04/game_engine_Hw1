@@ -1,6 +1,6 @@
 #include "WindowManagement.hpp"
 
-#define GLFW_MINOR_VERSION 6
+#define GLFW_MINOR_VERSION 1
 
 WindowManagement::WindowManagement()
 {

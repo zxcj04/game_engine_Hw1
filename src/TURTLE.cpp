@@ -15,7 +15,7 @@ TURTLE::TURTLE()
     facing[2] /= len;
 
     // auto calc angle for facing
-    angle = asin(facing[0]) * 180 / M_PI;
+    angle = asin(facing[0]) * 180 / 3.14159;
 
     // fix arcsin duplicate value of two angle
     if(facing[2] < 0)
@@ -275,9 +275,9 @@ void TURTLE::move(vector<ROCK*> rocks)
         {
             angle = dis_angle(gen);
 
-            facing[0] = sin(angle * M_PI / 180);
+            facing[0] = sin(angle * 3.14159 / 180);
             facing[1] = facing[1];
-            facing[2] = cos(angle * M_PI / 180);
+            facing[2] = cos(angle * 3.14159 / 180);
 
             timer = dis_timer(gen);
         }

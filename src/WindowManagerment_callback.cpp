@@ -259,9 +259,9 @@ void WindowManagement::check_keyboard_pressing()
     //     if(this->entity_handler->rov->blade_angle[3] > 360)
     //         this->entity_handler->rov->blade_angle[3] -= 360;
 
-    //     this->entity_handler->rov->facing[0] = sin(this->entity_handler->rov->angle * M_PI / 180);
+    //     this->entity_handler->rov->facing[0] = sin(this->entity_handler->rov->angle * 3.14159 / 180);
     //     this->entity_handler->rov->facing[1] = this->entity_handler->rov->facing[1];
-    //     this->entity_handler->rov->facing[2] = cos(this->entity_handler->rov->angle * M_PI / 180);
+    //     this->entity_handler->rov->facing[2] = cos(this->entity_handler->rov->angle * 3.14159 / 180);
     // }
 
     // if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
@@ -276,9 +276,9 @@ void WindowManagement::check_keyboard_pressing()
     //     if(this->entity_handler->rov->blade_angle[4] < 0)
     //         this->entity_handler->rov->blade_angle[4] += 360;
 
-    //     this->entity_handler->rov->facing[0] = sin(this->entity_handler->rov->angle * M_PI / 180);
+    //     this->entity_handler->rov->facing[0] = sin(this->entity_handler->rov->angle * 3.14159 / 180);
     //     this->entity_handler->rov->facing[1] = this->entity_handler->rov->facing[1];
-    //     this->entity_handler->rov->facing[2] = cos(this->entity_handler->rov->angle * M_PI / 180);
+    //     this->entity_handler->rov->facing[2] = cos(this->entity_handler->rov->angle * 3.14159 / 180);
     // }
 
     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
@@ -413,9 +413,9 @@ void WindowManagement::cursor_callback(GLFWwindow * window, double x, double y)
             this->entity_handler->rov->blade_angle[4] -= 360;
     }
 
-    this->entity_handler->rov->facing[0] = sin(this->entity_handler->rov->angle * M_PI / 180);
+    this->entity_handler->rov->facing[0] = sin(this->entity_handler->rov->angle * 3.14159 / 180);
     this->entity_handler->rov->facing[1] = this->entity_handler->rov->facing[1];
-    this->entity_handler->rov->facing[2] = cos(this->entity_handler->rov->angle * M_PI / 180);
+    this->entity_handler->rov->facing[2] = cos(this->entity_handler->rov->angle * 3.14159 / 180);
 }
 
 void WindowManagement::keyboard_callback(GLFWwindow* window, int key, int scancode, int action, int mods)

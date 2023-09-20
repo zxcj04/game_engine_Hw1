@@ -308,18 +308,18 @@ void WindowManagement::make_light()
     lit2_position[2] = rov_pos[2];
 
     tmp[0] = 0;
-    tmp[1] = -sin((lit2_angle_y) * (M_PI / 180));
-    tmp[2] =  cos((lit2_angle_y) * (M_PI / 180));
+    tmp[1] = -sin((lit2_angle_y) * (3.14159 / 180));
+    tmp[2] =  cos((lit2_angle_y) * (3.14159 / 180));
 
-    lit2_direction[0] =   cos((this->entity_handler->rov->angle + lit2_angle) * (M_PI / 180)) * tmp[0]
+    lit2_direction[0] =   cos((this->entity_handler->rov->angle + lit2_angle) * (3.14159 / 180)) * tmp[0]
                         + 0                                             * tmp[1]
-                        + sin((this->entity_handler->rov->angle + lit2_angle) * (M_PI / 180)) * tmp[2];
+                        + sin((this->entity_handler->rov->angle + lit2_angle) * (3.14159 / 180)) * tmp[2];
     lit2_direction[1] =   0                                             * tmp[0]
                         + 1                                             * tmp[1]
                         + 0                                             * tmp[2];
-    lit2_direction[2] = - sin((this->entity_handler->rov->angle + lit2_angle) * (M_PI / 180)) * tmp[0]
+    lit2_direction[2] = - sin((this->entity_handler->rov->angle + lit2_angle) * (3.14159 / 180)) * tmp[0]
                         + 0                                             * tmp[1]
-                        + cos((this->entity_handler->rov->angle + lit2_angle) * (M_PI / 180)) * tmp[2];
+                        + cos((this->entity_handler->rov->angle + lit2_angle) * (3.14159 / 180)) * tmp[2];
 
     glLightfv(GL_LIGHT2, GL_POSITION, lit2_position);
     glLightfv(GL_LIGHT2, GL_SPOT_DIRECTION, lit2_direction);
